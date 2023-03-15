@@ -4,7 +4,8 @@
 
 Hello World! this is my version of nodejs api project folder structure
 
-In my opinion, the Express framework is lightweight and flexible, easy to learn, and definitely popular and has lots of support. [Express Documentation](https://expressjs.com/)!
+Thanks for coming to my repo.
+Thanks also to Rahma for making me fall in love.
 
 ## Add your files
 
@@ -36,6 +37,8 @@ Every project is different, so consider which of these sections apply to yours. 
 Choose a self-explaining name for your project.
 
 ## Description
+
+In my opinion, the Express framework is lightweight and flexible, easy to learn, and definitely popular and has lots of support. [Express Documentation](https://expressjs.com/)!
 
 Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
