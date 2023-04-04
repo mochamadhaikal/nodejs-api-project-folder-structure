@@ -5,7 +5,6 @@
 Hello World! this is my version of nodejs api project folder structure
 
 Thanks for coming to my repo.
-Thanks also to Rahma for making me fall in love.
 
 ## Add your files
 
