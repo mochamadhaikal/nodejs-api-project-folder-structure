@@ -1,0 +1,15 @@
+#Mac
+.DS_Store
+# Folders
+node_modules
+release
+public
+build
+log
+# Fiels
+.env
+dump.rdb
+yarn.lock
+pnpm-lock.yaml
+yarn-error.log
+package-lock.json

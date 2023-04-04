@@ -1,0 +1,28 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+        {
+            "files": ["**/*.test.js"],
+            "env": {
+                "jest": true // now **/*.test.js files' env has both es6 *and* jest
+            },
+            "plugins": ["jest"]
+        }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "no-console": "off",
+        "semi": ["off", "always"],
+        "quotes": ["error", "single"],
+        "curly": "error",
+        "max-len": [1, { "code": 120 }]
+    }
+}

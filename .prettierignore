@@ -1,0 +1,13 @@
+#Mac
+.DS_Store
+# Folders
+node_modules
+release
+public
+log
+# Fiels
+.env
+dump.rdb
+yarn.lock
+yarn-error.log
+package-lock.json
