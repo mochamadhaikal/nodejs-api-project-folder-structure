@@ -1,3 +1,4 @@
+const path = require('path');
 const NodeMailer = require('nodemailer');
 const log = require('./logger');
 const EnvConfig = require('../configs/EnvConfig');
@@ -29,6 +30,43 @@ class Mailer {
             subject: this.subject,
             text: this.text || null,
             html: this.html || null,
+            attachments: [
+                {
+                    filename: 'logo.png',
+                    path: path.join(__dirname.concat('/../assets/img/logo.png')),
+                    cid: 'logo',
+                },
+                {
+                    filename: 'pw-policy.png',
+                    path: path.join(__dirname.concat('/../assets/img/pw-policy.png')),
+                    cid: 'pw-policy',
+                },
+                {
+                    filename: 'wa.png',
+                    path: path.join(__dirname.concat('/../assets/icons/wa.png')),
+                    cid: 'wa',
+                },
+                {
+                    filename: 'fb.png',
+                    path: path.join(__dirname.concat('/../assets/icons/fb.png')),
+                    cid: 'fb',
+                },
+                {
+                    filename: 'tw.png',
+                    path: path.join(__dirname.concat('/../assets/icons/tw.png')),
+                    cid: 'tw',
+                },
+                {
+                    filename: 'yt.png',
+                    path: path.join(__dirname.concat('/../assets/icons/yt.png')),
+                    cid: 'yt',
+                },
+                {
+                    filename: 'ig.png',
+                    path: path.join(__dirname.concat('/../assets/icons/ig.png')),
+                    cid: 'ig',
+                },
+            ],
         };
 
         log.info(`Sending email: ${this.to}`);
