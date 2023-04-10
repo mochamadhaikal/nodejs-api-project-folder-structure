@@ -1,13 +1,9 @@
-import express from 'express';
+const { Router } = require('express');
 
-const router = express.Router();
+const router = Router();
 
-import ExampleController from '../controllers/example-controller';
-const example = new ExampleController();
-router.get('/ping', [example.ping]);
+router.use(require('./example'));
+router.use(require('./ex-upload'));
+router.use(require('./ex-email'));
 
-import AuthRoutes from '../controllers/auth';
-const auth = new AuthRoutes();
-router.post('/auth', [auth.validate, auth.checkUserdata, auth.createToken, auth.updateAccess, auth.process]);
-
-export default router;
+module.exports = router;

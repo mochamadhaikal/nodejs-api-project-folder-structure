@@ -1,11 +1,10 @@
-import MY_Controller from '../system/MY_Controller';
-import { Request, Response, NextFunction } from 'express';
-import jwt from '../lib/jwt';
-import ModelAuth from '../models/model-auth';
+const MainController = require('../system/MainController');
+const jwt = require('../lib/jwt');
+const ModelAuth = require('../models/AuthModel');
 
 const m_auth = new ModelAuth();
 
-export default class Auth extends MY_Controller {
+class AuthController extends MainController {
     validate = async (req, res, next) => {
         try {
             //get base64encode basic auth
@@ -70,7 +69,7 @@ export default class Auth extends MY_Controller {
                 throw new Error(getUser.message);
             }
         } catch (error) {
-            this.logger.error(`Error ${__filename}`, {
+            this.log.error(`Error ${__filename}`, {
                 errorMessage: error.message,
                 errorStack: error.stack,
             });
@@ -102,10 +101,10 @@ export default class Auth extends MY_Controller {
                 req.body.token = token;
                 return next();
             } else {
-                throw new Error(`Error generate token`);
+                throw new Error('Error generate token');
             }
         } catch (error) {
-            this.logger.error(`Error ${__filename}`, {
+            this.log.error(`Error ${__filename}`, {
                 errorMessage: error.message,
                 errorStack: error.stack,
             });
@@ -128,7 +127,7 @@ export default class Auth extends MY_Controller {
                 throw new Error(update.message);
             }
         } catch (error) {
-            this.logger.error(`Error ${__filename}`, {
+            this.log.error(`Error ${__filename}`, {
                 errorMessage: error.message,
                 errorStack: error.stack,
             });
@@ -136,7 +135,7 @@ export default class Auth extends MY_Controller {
         }
     };
 
-    process = async (req, res, next) => {
+    process = async (req, res) => {
         const body = req.body;
         const token = body.token;
         const responseData = {
@@ -148,3 +147,5 @@ export default class Auth extends MY_Controller {
         return this.message.getMessage(res);
     };
 }
+
+module.exports = AuthController;

@@ -7,14 +7,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.text());
 
-// import middleware from './middleware'
 const middleware = require('./middleware');
 
 app.use(middleware.dbAuth);
 app.use(middleware.logRequest);
 
 //define routes
-const indexroute = require('./routers/example');
+const indexroute = require('./routers');
 const ExampleRoute = require('./routers/example');
 
 const runServer = async () => {

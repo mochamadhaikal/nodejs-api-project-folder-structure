@@ -1,6 +1,5 @@
 const fs = require('fs');
 const jose = require('jose');
-// import * as jose from 'jose';
 const log = require('./logger');
 //read secret key
 const secretKey = fs.readFileSync('secret.key', 'utf-8');
