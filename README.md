@@ -4,8 +4,14 @@
 
 Hello World! this is my version of nodejs api project folder structure
 
-Thanks for coming to my repo.
+Thanks for coming to my repo.<br>
 Thanks also to Rahma for making me fall in love.
+
+## PRE REQUISITE
+
+1. node js >= v16
+2. version control using npm, yarn (recommended), or pnpm
+3. database using mysql, postgresql (recommended)
 
 ## Add your files
 
